@@ -1,1 +1,1 @@
-# ifx_summer_school_2025
+# ifx_summer_school_2025_2
