@@ -6,5 +6,9 @@ package ifx_dig_regblock_pkg;
 
   // TODO: Include regblock files
 
+  `include "ifx_dig_field.svh"
+  `include "ifx_dig_registers.svh"
+  `include "ifx_dig_regblock.svh"
+
 
 endpackage

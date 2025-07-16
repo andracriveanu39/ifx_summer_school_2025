@@ -40,9 +40,17 @@ class ifx_dig_regblock extends uvm_object;
      * If the register is not found, return null.
      */
     function ifx_dig_reg get_reg_by_name(string reg_name);
-        string flt_reg;
-        string int_reg;
-        int k = 0;
+        foreach(FILTER_CTRL[idx]) begin
+            if(FILTER_CTRL[idx].get_name() == reg_name) begin
+                return FILTER_CTRL[idx];
+            end
+        end
+        foreach(INT_STATUS[idx]) begin
+            if(INT_STATUS[idx].get_name() == reg_name) begin
+                return INT_STATUS[idx];
+            end
+        end
+        return null; // no register with the given name
     endfunction
 
 
