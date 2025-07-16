@@ -1,0 +1,48 @@
+
+-64bit
+
++incdir+${proj_root}
++incdir+${proj_root}/source
++incdir+${proj_root}/source/v
++incdir+${proj_root}/source/v/rtl
++incdir+${proj_root}/source/v/tb
+
++incdir+${proj_root}/source/sv/filter_tb
++incdir+${proj_root}/source/sv/filter_tb/tb
++incdir+${proj_root}/source/sv/filter_tb/include
++incdir+${proj_root}/source/sv/filter_tb/include/uvcs
++incdir+${proj_root}/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc
++incdir+${proj_root}/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_pkg_and_if
++incdir+${proj_root}/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc
++incdir+${proj_root}/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_data_bus_uvc_pkg_and_if
++incdir+${proj_root}/source/sv/filter_tb/include/env
++incdir+${proj_root}/source/sv/filter_tb/include/env/registers
++incdir+${proj_root}/source/sv/filter_tb/include/tests
++incdir+${proj_root}/source/sv/filter_tb/include/seq_lib
+-sv
+-gui
+// RTL compilation files
+${proj_root}/source/sv/rtl/*.v
+
+// SV env compilation files
+${proj_root}/source/sv/filter_tb/include/env/ifx_dig_defines.svh
+${proj_root}/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_pkg_and_if/*.sv
+${proj_root}/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_pkg_and_if/*.sv
+${proj_root}/source/sv/filter_tb/include/env/registers/*.sv
+${proj_root}/source/sv/filter_tb/include/env/*.sv
+${proj_root}/source/sv/filter_tb/include/tests/*.sv
+${proj_root}/source/sv/filter_tb/tb/*.sv
+
+-input run_gui.tcl
+-access rwc
+-linedebug
+-clean
+-uvm
+-uvmlinedebug
+-coverage all
+-covoverwrite
+-timescale 1ns/1ps
+-errormax 2
+-ALLOWREDEFINITION
+-top ifx_dig_top
+

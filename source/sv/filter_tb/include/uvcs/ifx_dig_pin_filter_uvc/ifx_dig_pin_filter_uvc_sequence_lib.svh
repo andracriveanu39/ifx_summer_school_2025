@@ -22,7 +22,7 @@ class ifx_dig_pin_filter_uvc_base_sequence extends uvm_sequence #(ifx_dig_pin_fi
     uvm_sequencer_base parent_sequencer_generic;
 
 
-    ifx_dig_pin_filter_uvc_seq_item seq_item;
+    ifx_dig_pin_filter_uvc_seq_item seq_item; //secventa particularizeaza un seq_item
 
     rand filt_drive_t drive_type; // selects the type of driving
 
@@ -119,9 +119,12 @@ class ifx_dig_pin_filter_uvc_valid_pulse_sequence extends ifx_dig_pin_filter_uvc
     // TODO: Implement logic for driving the requested valid pulse
     virtual task body();
         seq_item.randomize(); // randomize item
-        //HINT: override necessary fields
+        // override necessary fields
+        seq_item.drive_type               = FILT_DRV_VALID;
+        seq_item.driving_edge_auto_select = 1;
 
         //HINT: send the object to the sequencer
+        `uvm_send(seq_item) // send the object to the sequencer
     endtask
 endclass
 

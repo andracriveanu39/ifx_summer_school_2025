@@ -149,7 +149,7 @@ module ifx_dig_top;
     //===========================CLOCKS=============================
     // TODO: Modify generate_clock task call so that a 100 MHz will be generated
     initial begin
-        generate_clock();
+        generate_clock("ns", 10); //apelarea taskului ca sa ruleze
     end
 
       // TODO: Write a task capable of generating a clock signal

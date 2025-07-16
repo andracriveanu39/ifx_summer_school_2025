@@ -1,0 +1,29 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-RUNMODE
+-sv
+-LINEDEBUG
+-UVMLINEDEBUG
+-ERRORMAX
+2
+-ALLOWREDEFINITION
+-I_INCDIR
+/opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src
+-DEFINE
+USE_PARAMETERIZED_WRAPPER
+-I_INCDIR
+/opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv
+-UPDATE
+-CDSLIB
+./xcelium.d/run.lnx8664.24.09.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.24.09.d/hdlrun.var
+-work
+worklib
+-LINEDEBUG
+-define
+UVM_PLI
+/opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/uvm_pkg.sv
+/opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/cdns_uvm_pkg.sv

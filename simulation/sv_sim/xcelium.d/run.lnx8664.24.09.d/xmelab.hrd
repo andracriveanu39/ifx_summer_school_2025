@@ -1,0 +1,12 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-ACCESS
+rwc
+-COVERAGE
+all
+-timescale
+1ns/1ps
+
+ifx_dig_top

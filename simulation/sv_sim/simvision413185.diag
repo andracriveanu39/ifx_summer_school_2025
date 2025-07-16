@@ -1,0 +1,92 @@
+*** Message Type: info ***
+When: Tue Jul 15 10:04:51 AM EEST 2025
+SimVision started.
+Version: TOOL:  simvision(64)   24.09-s005
+User: student8
+Host: sonic2.dcae.pub.ro
+Platform: Linux/x86_64/5.14.0-427.28.1.el9_4.x86_64
+Started: Tue Jul 15 10:04:51 AM EEST 2025
+Command: /opt/cadence/installs/XCELIUM2409/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:sonic2.dcae.pub.ro:52335 -64BIT -nocopyright
+Work Directory: /home/student8/ifx_summer_school_2025/simulation/sv_sim
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:04:59 AM EEST 2025
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:05:49 AM EEST 2025
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:06:15 AM EEST 2025
+Connect to Simulator
+      Design: worklib.ifx_dig_top:sv
+   Languages: verilog assertion
+   Simulator: XM-Sim
+     Version: TOOL:   xmsim(64)       24.09-s005
+        User: student8
+        Host: sonic2.dcae.pub.ro
+Time Started: Tue Jul 15 10:04:34 AM EEST 2025
+  Process ID: 413057
+   Directory: /home/student8/ifx_summer_school_2025/simulation/sv_sim
+     Command: xrun +UVM_TESTNAME=ifx_dig_hello_world -svseed 1234 -gui -f run.args
+
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:06:18 AM EEST 2025
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:19:37 AM EEST 2025
+Create waveform window: "Waveform 1"
+ 
+*** Message Type: error ***
+When: Tue Jul 15 10:22:06 AM EEST 2025
+bad keyword "XdndSelection": should be pattern
+    while executing
+"error "bad keyword \"$cmd\": should be pattern""
+    (procedure "::unknown" line 2)
+    invoked from within
+"XdndSelection selection doesn't exist or form "SV_DATABASE" not defined"
+    (procedure "replicator::replicate" line 1)
+    invoked from within
+"replicator::replicate $data -new \#same"
+    (object "::.waveWindow0.work.sidebars.csite.tabs.tab1.browse.tree" method "::dad::ScopeTree::_drop" body line 20)
+    invoked from within
+"::.waveWindow0.work.sidebars.csite.tabs.tab1.browse.tree _drop {XdndSelection selection doesn't exist or form "SV_DATABASE" not defined} {SV_SCOPE}"
+    (in namespace inscope "::dad::ScopeTree" script line 1)
+    invoked from within
+"namespace inscope ::dad::ScopeTree {::.waveWindow0.work.sidebars.csite.tabs.tab1.browse.tree _drop {XdndSelection selection doesn't exist or form "SV_..."
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 $cmd"
+    (procedure "::tkdnd::generic::HandleDrop" line 56)
+    invoked from within
+"::tkdnd::generic::HandleDrop {} {} $_pressedkeys  $_last_mouse_root_x $_last_mouse_root_y $time  $_last_mouse_x $_last_mouse_y"
+    (procedure "tkdnd::xdnd::HandleXdndDrop" line 10)
+    invoked from within
+"tkdnd::xdnd::HandleXdndDrop 0"
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:28:32 AM EEST 2025
+Delete waveform window: "Waveform 1"
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:29:01 AM EEST 2025
+Exit XM-Sim: user
+      Design: worklib.ifx_dig_top:sv
+   Languages: verilog assertion
+   Simulator: XM-Sim
+     Version: TOOL:   xmsim(64)       24.09-s005
+        User: student8
+        Host: sonic2.dcae.pub.ro
+Time Started: Tue Jul 15 10:27:20 AM EEST 2025
+  Process ID: 426513
+   Directory: /home/student8/ifx_summer_school_2025/simulation/sv_sim
+     Command: xrun +UVM_TESTNAME=ifx_dig_hello_world -svseed 1234 -gui -f run.args -s
+
+ 
+*** Message Type: info ***
+When: Tue Jul 15 10:29:02 AM EEST 2025
+SimVision Exit.
+ 

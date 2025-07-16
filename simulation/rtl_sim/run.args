@@ -1,0 +1,20 @@
+
+-64bit
+
++incdir+${proj_root}
++incdir+${proj_root}/source
++incdir+${proj_root}/source/sv
++incdir+${proj_root}/source/sv/rtl
++incdir+${proj_root}/source/sv/rtl/tb
+-sv
+-gui
+// RTL compilation files
+${proj_root}/source/sv/rtl/*.sv
+${proj_root}/source/sv/rtl/tb/*.sv
+
+-access rwc
+-timescale 1ns/1ps
+-errormax 2
+-ALLOWREDEFINITION
+
+

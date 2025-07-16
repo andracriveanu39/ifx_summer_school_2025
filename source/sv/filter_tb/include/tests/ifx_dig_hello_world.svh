@@ -37,13 +37,13 @@ class ifx_dig_hello_world extends ifx_dig_testbase;
     task main_phase(uvm_phase phase);
         phase.raise_objection(this);
 
-        super.main_phase(phase); // call default main phase, contains reset
+        super.main_phase(phase); // folosim super pentru ca avem aceiasi parametri pt polimorfism, call default main phase, contains reset
 
         `TEST_INFO("Main phase started")
 
         #100us;
-
-
+        drive_reset(.use_clock_cycle(1), .numb_of_clocks(20)); //folosesc scrierea asta ca sa completez doar parametrii care ma intereseaza
+        #100us;
         // TODO: go through the filters and test them as described in requirement
 
 

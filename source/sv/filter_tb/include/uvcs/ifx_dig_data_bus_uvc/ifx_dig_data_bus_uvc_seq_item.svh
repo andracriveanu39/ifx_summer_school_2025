@@ -17,8 +17,8 @@ class ifx_dig_data_bus_uvc_seq_item extends uvm_sequence_item;
 
   `uvm_object_utils(ifx_dig_data_bus_uvc_seq_item)
 
-  rand bit[`DWIDTH-1:0] data;
-  rand bit[`AWIDTH-1:0] address;
+  rand bit[`DWIDTH-1:0] data; // rand=parametrii pot fi randomizati
+  rand bit[`AWIDTH-1:0] address; //pentru READ in sequence_lib trebuie configurate address si access_type
   rand access_type_t access_type;
   rand address_validity_t addr_validity;
   
