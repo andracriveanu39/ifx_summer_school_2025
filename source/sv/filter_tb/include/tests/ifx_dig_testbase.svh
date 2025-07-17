@@ -215,16 +215,16 @@ endtask : main_phase
 /*
  * task used to write the specific fields of a register with given values
  */
-task ifx_dig_testbase::write_reg_fields(string reg_name, string fields_names[]={}, int fields_values[]={}, read_after_write = 0);
+task ifx_dig_testbase::write_reg_fields(string reg_name, string fields_names[]={}, int fields_values[]={}, read_after_write = 0); //ne folosim de formatul lui write ca sa scriem read
     ifx_dig_data_bus_uvc_write_sequence write_seq;
-    ifx_dig_reg reg_obj = dig_env.scoreboard.regblock.get_reg_by_name(reg_name);
-
+    ifx_dig_reg reg_obj = dig_env.scoreboard.regblock.get_reg_by_name(reg_name); //ne returneaza pointer catre registrul cu numele respectiv
+    //ne intereseaza sa ii aflam numele si adresa
     write_seq         = ifx_dig_data_bus_uvc_write_sequence::type_id::create("write_seq", this);
-    write_seq.address = reg_obj.get_address();
+    write_seq.address = reg_obj.get_address(); //functii din clasa ifx_dig_reg
     write_seq.data    = reg_obj.get_reg_value();
     `uvm_info("DEBUG", $sformatf("Reg value before write = %b", write_seq.data), UVM_MEDIUM)
 
-    foreach(fields_names[idx]) begin
+    foreach(fields_names[idx]) begin //avand parametrii pentru fieldul pe care vrem sa il actualizam, se scriu doar bitii respectivi
         ifx_dig_field field_obj = reg_obj.get_field_by_name(fields_names[idx]);
         int field_val           = (2**field_obj.get_size() -1) & fields_values[idx];
         for(int pos=0 ;pos<=field_obj.get_size()-1; pos++) begin
@@ -244,10 +244,17 @@ endtask
  */
 task ifx_dig_testbase::read_reg(string reg_name);
     ifx_dig_data_bus_uvc_read_sequence read_seq;
+    ifx_dig_reg reg_obj = dig_env.scoreboard.regblock.get_reg_by_name(reg_name);
 
-
+    if(reg_obj==null) begin 
+        `uvm_error("read_reg", $sformatf("Invalid register name! No register named <%s>", reg_name)) //introduc o eroare 
+    end
+    else begin
+    read_seq = ifx_dig_data_bus_uvc_read_sequence::type_id::create("read_seq", this);
     `uvm_info("read_reg", $sformatf("Read register %s", reg_name), UVM_NONE)
-
+    read_seq.address = reg_obj.get_address();
+    read_seq.start(dig_env.data_bus_uvc_agt.sequencer); //trebuie sa trimit secventa catre sequencer ca sa porneasca, sequencerul se afla in agent, iar agentul in environment
+    end
 endtask
 
 /*

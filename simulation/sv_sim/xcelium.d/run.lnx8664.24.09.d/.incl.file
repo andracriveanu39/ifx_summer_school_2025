@@ -472,3 +472,15 @@
 /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_test_filter_rising.svh
 /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/ifx_dig_test_filter_rising.svh
 /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/registers/ifx_dig_test_filter_rising.svh
+./ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_pkg_and_if/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/ifx_dig_test_filter_toggle.svh
+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/registers/ifx_dig_test_filter_toggle.svh

@@ -132,14 +132,34 @@ endclass
 // TODO: Implement general sequence capable of driving both read and write
 class ifx_dig_data_bus_uvc_op_sequence extends uvm_sequence #(ifx_dig_data_bus_uvc_seq_item);
     `uvm_object_utils(ifx_dig_data_bus_uvc_op_sequence)
+    rand bit[`AWIDTH-1:0] address; //adaugam la toate rand pentru a nu fi nevoie sa setez eu valorile 
+    rand bit[`DWIDTH-1:0] data;
+    rand access_type_t access_type;
+
+    constraint access_type_c { //o constrangere inseamna o limitare a randomizarii
+        access_type inside {READ, WRITE}; //impun ca access_type sa fie fie READ sau WRITE 
+    } 
+
+    constraint data_for_read_c {
+        if (access_type == READ) { //pot constrange in functie de alta valoare
+            data == 0; //datele de input sa fie tot timpul 0 cand facem citire
+        }
+    }
+
+    ifx_dig_data_bus_uvc_seq_item seq_item;
 
     function new(string name = get_type_name());
         super.new(name);
     endfunction
 
+    virtual task body(); //in body se face implementarea
+    `uvm_create(seq_item); //prima etapa:crearea seq_item
 
-    virtual task body();
+    seq_item.address=address; //a doua etapa:particularizarea seq_item
+    seq_item.data=data;
+    seq_item.access_type=access_type; //face read sau write
 
+    `uvm_send(seq_item) //ultima etapa: trimiterea secventei catre sequencer
     endtask;
 
 endclass

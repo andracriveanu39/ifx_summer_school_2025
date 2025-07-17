@@ -1,7 +1,7 @@
 xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s005: Started on Jul 16, 2025 at 12:11:39 EEST
+TOOL:	xrun(64)	24.09-s005: Started on Jul 17, 2025 at 11:33:15 EEST
 xrun
-	+UVM_TESTNAME=ifx_dig_test_filter_rising
+	+UVM_TESTNAME=ifx_dig_test_filter_toggle
 	-svseed 1234
 	-gui
 	-f run.args
@@ -71,7 +71,7 @@ file: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx
 file: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_pkg_and_if/ifx_dig_data_bus_uvc_pkg.sv
     endtask;
            |
-xmvlog: *W,UEXPSC (/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh,143|11): Ignored unexpected semicolon following SystemVerilog description keyword (endtask).
+xmvlog: *W,UEXPSC (/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh,163|11): Ignored unexpected semicolon following SystemVerilog description keyword (endtask).
 	package worklib.ifx_dig_data_bus_uvc_pkg:sv
 		errors: 0, warnings: 1
 file: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_pkg_and_if/ifx_dig_pin_filter_uvc_interface.sv
@@ -199,10 +199,10 @@ xmelab: *W,COVDCL: By default expression coverage is scored only for Verilog log
 			streams:  13, words:  6051
 		worklib.filter:v <0x7d8d9336>
 			streams:  41, words: 21506
-		worklib.ifx_dig_top:sv <0x470b010f>
-			streams: 187, words: 438912
-		worklib.ifx_dig_pin_filter_uvc_pkg:sv <0x7554f10b>
-			streams: 1674, words: 3175842
+		worklib.ifx_dig_top:sv <0x5352dc44>
+			streams: 212, words: 506445
+		worklib.ifx_dig_pin_filter_uvc_pkg:sv <0x63ab1034>
+			streams: 1674, words: 3181602
 		worklib.ifx_dig_regblock_pkg:sv <0x420e76f9>
 			streams: 152, words: 262970
 		worklib.cdns_uvm_pkg:sv <0x2efb14bf>
@@ -235,20 +235,20 @@ xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_inst
 		Modules:                       35       5
 		Interfaces:                    18       3
 		Verilog packages:               9       9
-		Registers:                 16,949  10,901
+		Registers:                 16,993  10,927
 		Scalar wires:                 279       -
 		Expanded wires:                96      32
 		Vectored wires:                35       -
 		Named events:                   4      15
 		Always blocks:                195      14
-		Initial blocks:               390     182
+		Initial blocks:               393     183
 		Parallel blocks:               39      40
 		Cont. assignments:            225      17
 		Pseudo assignments:            51       -
 		Assertions:                     4       4
 		Covergroup Instances:           0       1
-		SV Class declarations:        225     338
-		SV Class specializations:     474     474
+		SV Class declarations:        226     339
+		SV Class specializations:     476     476
 		Simulation timescale:         1ps
 	Writing initial simulation snapshot: worklib.ifx_dig_top:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
@@ -300,9 +300,9 @@ CDNS-UVM-1.1d (24.09-s005)
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
 running test
-UVM_INFO @ 0.000 ns: reporter [RNTST] Running test ifx_dig_test_filter_rising...
+UVM_INFO @ 0.000 ns: reporter [RNTST] Running test ifx_dig_test_filter_toggle...
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/ifx_dig_env.svh(67) @ 0.000 ns: uvm_test_top.dig_env [ifx_dig_env] >>>>>>>>>>>>ENV BUILD_PHASE starts<<<<<<<<<
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(44) @ 0.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(40) @ 0.000 ns: uvm_test_top [TEST] 
 
 [TEST_INFO][0.00us]:
 	 Run phase started
@@ -326,7 +326,6 @@ UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_monitor.svh(45) @ 0.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[10].monitor [ifx_dig_pin_filter_uvc_monitor] Starting the run() phase
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_monitor.svh(45) @ 0.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[0].monitor [ifx_dig_pin_filter_uvc_monitor] Starting the run() phase
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(39) @ 0.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Starting the run() phase
-UVM_WARNING /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(264) @ 0.000 ns: uvm_test_top [drive_reset] reset_duration_ns must be at least 3 clock periods
 Ran until 10 NS + 0
 xcelium> 
 xcelium> create_local_wave_db
@@ -335,735 +334,447 @@ xcelium> cp
 xmsim: *W,PRFRTNEV: (-FUNCTIONS) Database must be opened in -EVENT mode to capture calling scope data. Use -wave_glitch_recording with ida_database if ida_probe is being used. Set is_sequence_time option to 1 if $shm_open/$shm_probe is being used.
 Created probe 2
 xcelium> run
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(53) @ 45.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(48) @ 105.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.04us]:
+[TEST_INFO][0.10us]:
 	 Main phase started
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 45.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 105.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.04us]:
-	 Testing filter: 5. Configure randomly the filter, except the filter type and interrupt enable
+[TEST_INFO][0.10us]:
+	 Test filter 5
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 45.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 5 configured with reset type FILT_SYNC_RESET, int_en 1, window size 9, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 45.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 45.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL5 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 1, 9, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 45.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 4 data=229
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 56.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 65.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 65.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 105.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 5 configured with reset type FILT_SYNC_RESET, int_en 0, window size 9, filter type FILT_DISABLED
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 105.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 105.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL5 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 9, 0}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 105.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 4 data=164
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 116.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 125.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 125.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.07us]:
-	 Drive an invalid pulse length on filter: 5
+[TEST_INFO][0.12us]:
+	 Driving a valid pulse on filter 5
 
 
 stop -create -name Randomize -randomize
 Created stop Randomize
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 65.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 171.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 171.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 171.200 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 171.200 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 5
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 171.200 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 171.200 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN5_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 171.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=16
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 176.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 185.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 185.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 285.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 179.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 179.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 179.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 186.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 195.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 195.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 195.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 206.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 215.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 315.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.28us]:
-	 Drive a valid pulse length on filter: 5
+[TEST_INFO][0.32us]:
+	 Test filter 15
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 343.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 343.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 343.200 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 343.200 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 5
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 343.200 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 343.200 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN5_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 343.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=16
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 346.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 355.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 355.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 455.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 315.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 15 configured with reset type FILT_SYNC_RESET, int_en 0, window size 5, filter type FILT_FALLING
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 315.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 315.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL15 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 5, 2}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 315.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=14 data=150
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 326.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 335.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 335.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.46us]:
-	 Testing filter: 15. Configure randomly the filter, except the filter type and interrupt enable
+[TEST_INFO][0.34us]:
+	 Driving a valid pulse on filter 15
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 455.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 15 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 14, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 455.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 455.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL15 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 14, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 455.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=14 data=121
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 466.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 475.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 475.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 390.500 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 390.500 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 390.500 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 396.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 405.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 405.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 405.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 416.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 425.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 525.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.47us]:
-	 Drive an invalid pulse length on filter: 15
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 475.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 581.500 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 581.500 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 581.500 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 581.500 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 15
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 581.500 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 581.500 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN15_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 581.500 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=64
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 586.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 595.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 595.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 695.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][0.69us]:
-	 Drive a valid pulse length on filter: 15
+[TEST_INFO][0.53us]:
+	 Test filter 10
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 750.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 750.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 750.200 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 750.200 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 15
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 750.200 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 750.200 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN15_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 750.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=64
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 756.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 765.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 765.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 865.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 525.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 10 configured with reset type FILT_SYNC_RESET, int_en 0, window size 9, filter type FILT_DISABLED
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 525.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 525.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL10 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 9, 0}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 525.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 9 data=164
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 536.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 545.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 545.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.86us]:
-	 Testing filter: 10. Configure randomly the filter, except the filter type and interrupt enable
+[TEST_INFO][0.55us]:
+	 Driving a valid pulse on filter 10
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 865.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 10 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 0, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 865.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 865.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL10 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 0, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 865.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 9 data=65
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 876.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 885.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 885.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 596.700 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 596.700 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 596.700 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 606.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 615.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 615.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 615.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 626.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 635.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 735.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][0.89us]:
-	 Drive an invalid pulse length on filter: 10
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 885.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 992.700 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 992.700 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 992.700 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 992.700 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 10
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 992.700 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 992.700 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN10_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 992.700 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 996.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1005.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1005.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 1105.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][1.10us]:
-	 Drive a valid pulse length on filter: 10
+[TEST_INFO][0.73us]:
+	 Test filter 14
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 1156.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1156.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1156.300 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 1156.300 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 10
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1156.300 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1156.300 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN10_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1156.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 735.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 14 configured with reset type FILT_SYNC_RESET, int_en 0, window size 11, filter type FILT_DISABLED
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 735.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 735.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL14 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 11, 0}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 735.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=13 data=172
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 746.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 755.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 755.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][0.76us]:
+	 Driving a valid pulse on filter 14
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 806.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 806.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 806.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 816.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 825.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 825.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 825.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 836.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 845.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 945.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][0.94us]:
+	 Test filter 16
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 945.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 16 configured with reset type FILT_SYNC_RESET, int_en 0, window size 2, filter type FILT_DISABLED
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 945.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 945.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL16 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 2, 0}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 945.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=15 data=136
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 956.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 965.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 965.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][0.96us]:
+	 Driving a valid pulse on filter 16
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 1018.500 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1018.500 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1018.500 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1026.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1035.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1035.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1035.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1046.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1055.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 1155.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][1.16us]:
+	 Test filter 8
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 1155.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 8 configured with reset type FILT_SYNC_RESET, int_en 0, window size 8, filter type FILT_FALLING
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1155.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1155.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL8 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 8, 2}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1155.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 7 data=162
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1166.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1175.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1175.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 1275.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 1175.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][1.27us]:
-	 Testing filter: 14. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 1275.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 14 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 9, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1275.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1275.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL14 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 9, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1275.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=13 data=101
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1286.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1295.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 1295.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][1.29us]:
-	 Drive an invalid pulse length on filter: 14
+[TEST_INFO][1.18us]:
+	 Driving a valid pulse on filter 8
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 1295.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 1408.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1408.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1408.300 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 1408.300 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 14
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1408.300 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1408.300 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN14_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1408.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=32
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1416.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1425.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1425.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 1525.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 1230.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1230.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1230.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1236.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1245.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1245.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1245.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1256.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1265.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 1365.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][1.52us]:
-	 Drive a valid pulse length on filter: 14
+[TEST_INFO][1.36us]:
+	 Test filter 13
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 1576.100 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1576.100 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1576.100 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 1576.100 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 14
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1576.100 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1576.100 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN14_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1576.100 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=32
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 1365.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 13 configured with reset type FILT_SYNC_RESET, int_en 0, window size 1, filter type FILT_DISABLED
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1365.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1365.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL13 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 1, 0}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1365.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=12 data=132
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1376.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1385.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 1385.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][1.39us]:
+	 Driving a valid pulse on filter 13
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 1436.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1436.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1436.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1446.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1455.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1455.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1455.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1466.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1475.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 1575.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][1.57us]:
+	 Test filter 11
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 1575.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 11 configured with reset type FILT_SYNC_RESET, int_en 0, window size 7, filter type FILT_BOTH
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1575.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1575.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL11 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 0, 7, 3}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1575.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=10 data=159
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1586.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1595.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1595.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 1695.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 1595.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][1.70us]:
-	 Testing filter: 16. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 1695.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 16 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 8, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1695.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1695.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL16 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 8, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1695.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=15 data=97
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1706.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1715.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 1715.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][1.72us]:
-	 Drive an invalid pulse length on filter: 16
+[TEST_INFO][1.59us]:
+	 Driving a valid pulse on filter 11
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 1715.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 1799.500 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1799.500 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1799.500 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 1799.500 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 16
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1799.500 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1799.500 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN16_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1799.500 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=128
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1806.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1815.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1815.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 1915.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 1649.400 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1649.400 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1649.400 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1656.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1665.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1665.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1665.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1676.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1685.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 1785.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][1.92us]:
-	 Drive a valid pulse length on filter: 16
+[TEST_INFO][1.78us]:
+	 Test filter 1
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 1970.600 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1970.600 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1970.600 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 1970.600 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 16
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1970.600 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1970.600 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN16_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1970.600 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=128
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1976.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1985.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 1985.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 2085.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 1785.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 1 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 5, filter type FILT_BOTH
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1785.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1785.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL1 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 5, 3}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1785.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 0 data=23
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1796.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 1805.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 1805.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][2.08us]:
-	 Testing filter: 8. Configure randomly the filter, except the filter type and interrupt enable
+[TEST_INFO][1.80us]:
+	 Driving a valid pulse on filter 1
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 2085.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 8 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 8, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2085.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2085.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL8 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 8, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2085.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 7 data=97
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 1859.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1859.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1859.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1866.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1875.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 1875.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 1875.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 1886.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 1895.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 1995.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][2.00us]:
+	 Test filter 6
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 1995.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 6 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 10, filter type FILT_RISING
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 1995.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 1995.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL6 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 10, 1}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 1995.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 5 data=41
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2006.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2015.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 2015.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][2.02us]:
+	 Driving a valid pulse on filter 6
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 2072.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2072.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2072.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2076.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2085.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2085.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2085.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2096.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2105.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 2105.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2105.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 2205.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][2.10us]:
-	 Drive an invalid pulse length on filter: 8
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 2105.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 2216.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2216.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2216.300 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 2216.300 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 8
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2216.300 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2216.300 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN8_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2216.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=128
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2226.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2235.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2235.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 2335.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][2.33us]:
-	 Drive a valid pulse length on filter: 8
+[TEST_INFO][2.21us]:
+	 Test filter 4
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 2386.100 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2386.100 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2386.100 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 2386.100 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 8
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2386.100 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2386.100 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN8_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2386.100 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=128
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2396.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2405.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2405.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 2505.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 2205.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 4 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 14, filter type FILT_DISABLED
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2205.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2205.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL4 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 14, 0}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2205.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 3 data=56
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2216.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2225.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 2225.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][2.50us]:
-	 Testing filter: 13. Configure randomly the filter, except the filter type and interrupt enable
+[TEST_INFO][2.23us]:
+	 Driving a valid pulse on filter 4
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 2505.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 13 configured with reset type FILT_SYNC_RESET, int_en 1, window size 13, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2505.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2505.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL13 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 1, 13, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2505.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=12 data=245
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 2283.000 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2283.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2283.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2286.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2295.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2295.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2295.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2306.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2315.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 2415.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][2.42us]:
+	 Test filter 2
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 2415.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 2 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 4, filter type FILT_DISABLED
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2415.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2415.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL2 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 4, 0}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2415.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 1 data=16
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2426.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2435.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 2435.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][2.44us]:
+	 Driving a valid pulse on filter 2
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 2487.900 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2487.900 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2487.900 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2496.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2505.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2505.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2505.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2516.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2525.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 2525.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2525.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 2625.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][2.52us]:
-	 Drive an invalid pulse length on filter: 13
+[TEST_INFO][2.62us]:
+	 Test filter 12
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 2525.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 2632.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2632.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2632.300 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 2632.300 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 13
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2632.300 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2632.300 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN13_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2632.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=16
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 2625.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 12 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 7, filter type FILT_BOTH
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2625.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2625.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL12 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 7, 3}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2625.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=11 data=31
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2636.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2645.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2645.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 2745.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 2645.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][2.75us]:
-	 Drive a valid pulse length on filter: 13
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 2801.600 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2801.600 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2801.600 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 2801.600 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 13
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2801.600 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2801.600 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN13_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2801.600 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=16
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2806.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2815.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 2815.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 2915.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][2.92us]:
-	 Testing filter: 11. Configure randomly the filter, except the filter type and interrupt enable
+[TEST_INFO][2.65us]:
+	 Driving a valid pulse on filter 12
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 2915.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 11 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 1, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2915.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2915.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL11 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 1, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2915.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=10 data=69
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2926.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2935.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 2935.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 2701.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2701.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2701.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2706.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2715.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2715.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2715.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2726.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2735.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 2835.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][2.94us]:
-	 Drive an invalid pulse length on filter: 11
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 2935.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 3064.400 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3064.400 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3064.400 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 3064.400 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 11
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3064.400 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3064.400 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN11_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3064.400 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=4
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3066.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3075.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3075.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 3175.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][3.17us]:
-	 Drive a valid pulse length on filter: 11
+[TEST_INFO][2.83us]:
+	 Test filter 9
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 3227.100 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3227.100 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3227.100 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 3227.100 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 11
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3227.100 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3227.100 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN11_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3227.100 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=4
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3236.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3245.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3245.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 3345.000 ns: uvm_test_top [TEST] 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 2835.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 9 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 13, filter type FILT_RISING
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 2835.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 2835.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL9 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 13, 1}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 2835.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 8 data=53
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2846.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 2855.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 2855.000 ns: uvm_test_top [TEST] 
 
-[TEST_INFO][3.35us]:
-	 Testing filter: 1. Configure randomly the filter, except the filter type and interrupt enable
+[TEST_INFO][2.85us]:
+	 Driving a valid pulse on filter 9
 
 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 3345.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 1 configured with reset type FILT_SYNC_RESET, int_en 1, window size 6, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3345.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3345.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL1 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 1, 6, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3345.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 0 data=217
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 2913.100 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2913.100 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2913.100 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2916.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2925.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 2925.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 2925.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 2936.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 2945.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 3045.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][3.04us]:
+	 Test filter 3
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 3045.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 3 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 12, filter type FILT_BOTH
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3045.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3045.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL3 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 12, 3}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3045.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 2 data=51
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3056.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3065.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 3065.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][3.06us]:
+	 Driving a valid pulse on filter 3
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 3123.000 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 3123.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 3123.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3126.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 3135.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 3135.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 3135.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3146.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 3155.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(60) @ 3255.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][3.25us]:
+	 Test filter 7
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(313) @ 3255.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 7 configured with reset type FILT_ASYNC_RESET, int_en 0, window size 4, filter type FILT_BOTH
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3255.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3255.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL7 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 0, 4, 3}
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3255.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 6 data=19
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3266.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3275.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_toggle.svh(66) @ 3275.000 ns: uvm_test_top [TEST] 
+
+[TEST_INFO][3.27us]:
+	 Driving a valid pulse on filter 7
+
+
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(341) @ 3333.800 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 3333.800 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 3333.800 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=16 data=0
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3336.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 3345.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(254) @ 3345.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(82) @ 3345.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence] Executing read sequence with parameters access_type=READ address=17 data=0
 UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3356.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3365.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 3365.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][3.37us]:
-	 Drive an invalid pulse length on filter: 1
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 3365.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 3488.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3488.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3488.300 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 3488.300 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3488.300 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3488.300 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN1_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3488.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3496.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3505.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3505.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 3605.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][3.60us]:
-	 Drive a valid pulse length on filter: 1
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 3662.100 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3662.100 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3662.100 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 3662.100 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3662.100 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3662.100 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN1_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3662.100 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3666.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3675.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3675.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 3775.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][3.77us]:
-	 Testing filter: 6. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 3775.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 6 configured with reset type FILT_SYNC_RESET, int_en 1, window size 9, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3775.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3775.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL6 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 1, 9, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3775.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 5 data=229
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3786.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3795.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 3795.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][3.79us]:
-	 Drive an invalid pulse length on filter: 6
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 3795.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 3923.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3923.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3923.200 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 3923.200 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 6
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 3923.200 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 3923.200 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN6_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 3923.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=32
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 3926.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 3935.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 3935.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 4035.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][4.04us]:
-	 Drive a valid pulse length on filter: 6
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 4086.100 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4086.100 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4086.100 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 4086.100 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 6
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 4086.100 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 4086.100 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN6_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 4086.100 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=32
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 4096.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 4105.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4105.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 4205.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][4.21us]:
-	 Testing filter: 4. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 4205.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 4 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 0, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 4205.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 4205.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL4 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 0, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 4205.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 3 data=65
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 4216.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 4225.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 4225.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][4.22us]:
-	 Drive an invalid pulse length on filter: 4
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 4225.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 4323.000 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4323.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4323.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 4323.000 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 4
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 4323.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 4323.000 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN4_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 4323.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=8
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 4326.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 4335.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4335.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 4435.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][4.43us]:
-	 Drive a valid pulse length on filter: 4
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 4486.700 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4486.700 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4486.700 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 4486.700 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 4
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 4486.700 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 4486.700 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN4_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 4486.700 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=8
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 4496.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 4505.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4505.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 4605.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][4.61us]:
-	 Testing filter: 2. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 4605.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 2 configured with reset type FILT_SYNC_RESET, int_en 1, window size 13, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 4605.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 4605.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL2 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 1, 13, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 4605.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 1 data=245
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 4616.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 4625.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 4625.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][4.62us]:
-	 Drive an invalid pulse length on filter: 2
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 4625.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 4715.900 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4715.900 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4715.900 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 4715.900 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 4715.900 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 4715.900 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN2_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 4715.900 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 4726.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 4735.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4735.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 4835.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][4.83us]:
-	 Drive a valid pulse length on filter: 2
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 4892.300 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4892.300 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4892.300 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 4892.300 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 4892.300 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 4892.300 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN2_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 4892.300 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 4896.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 4905.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 4905.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 5005.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.00us]:
-	 Testing filter: 12. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 5005.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 12 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 11, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5005.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5005.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL12 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 11, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5005.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=11 data=109
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5016.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5025.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 5025.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.03us]:
-	 Drive an invalid pulse length on filter: 12
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 5025.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 5113.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5113.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5113.200 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 5113.200 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 12
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5113.200 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5113.200 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN12_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5113.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=8
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5116.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5125.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5125.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 5225.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.22us]:
-	 Drive a valid pulse length on filter: 12
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 5279.200 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5279.200 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5279.200 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 5279.200 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 12
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5279.200 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5279.200 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN12_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5279.200 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=8
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5286.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5295.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5295.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 5395.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.39us]:
-	 Testing filter: 9. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 5395.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 9 configured with reset type FILT_ASYNC_RESET, int_en 1, window size 15, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5395.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5395.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL9 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{0, 1, 15, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5395.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 8 data=125
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5406.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5415.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 5415.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.42us]:
-	 Drive an invalid pulse length on filter: 9
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 5415.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 5508.100 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5508.100 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5508.100 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 5508.100 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 9
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5508.100 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5508.100 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN9_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5508.100 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5516.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5525.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5525.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 5625.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.62us]:
-	 Drive a valid pulse length on filter: 9
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 5677.900 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5677.900 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5677.900 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 5677.900 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 9
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5677.900 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5677.900 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS2 fields '{"IN9_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5677.900 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=17 data=1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5686.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5695.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5695.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 5795.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.79us]:
-	 Testing filter: 3. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 5795.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 3 configured with reset type FILT_SYNC_RESET, int_en 1, window size 6, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5795.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5795.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL3 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 1, 6, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5795.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 2 data=217
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5806.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5815.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 5815.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][5.82us]:
-	 Drive an invalid pulse length on filter: 3
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 5815.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 5915.000 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5915.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5915.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 5915.000 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 3
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 5915.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 5915.000 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN3_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 5915.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=4
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 5926.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 5935.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 5935.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 6035.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][6.04us]:
-	 Drive a valid pulse length on filter: 3
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 6091.500 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6091.500 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6091.500 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 6091.500 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 3
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 6091.500 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 6091.500 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN3_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 6091.500 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=4
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 6096.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 6105.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6105.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(65) @ 6205.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][6.21us]:
-	 Testing filter: 7. Configure randomly the filter, except the filter type and interrupt enable
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(306) @ 6205.000 ns: uvm_test_top [TEST_BASE/CONFIGURE_FILTER] Filter 7 configured with reset type FILT_SYNC_RESET, int_en 1, window size 11, filter type FILT_RISING
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 6205.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 6205.000 ns: uvm_test_top [write_reg_fields] Write register FILTER_CTRL7 fields '{"WD_RST", "INT_EN", "WINDOW_SIZE", "FILTER_TYPE"} with values '{1, 1, 11, 1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 6205.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address= 6 data=237
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 6216.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 6225.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(75) @ 6225.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][6.22us]:
-	 Drive an invalid pulse length on filter: 7
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_sequence_lib.svh(165) @ 6225.000 ns: uvm_test_top.dig_env.pin_filter_uvc_agt_[4].sequencer@@pin_filter_generic_seq [ifx_dig_pin_filter_uvc_generic_sequence] Executing sequence with parameters drive_type=FILT_DRV_INVALID filt_edge=FILT_RISE_EDGE driving_edge_auto_select=0 pulse_length_clk=0
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 6318.800 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6318.800 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6318.800 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 6318.800 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 7
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 6318.800 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 6318.800 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN7_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 6318.800 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=64
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 6326.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 6335.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6335.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_test_filter_rising.svh(87) @ 6435.000 ns: uvm_test_top [TEST] 
-
-[TEST_INFO][6.43us]:
-	 Drive a valid pulse length on filter: 7
-
-
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(334) @ 6490.000 ns: uvm_test_top [TEST_BASE/READ_FILTER_STATUS] Reading filter status for all filters
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6490.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6490.000 ns: uvm_test_top [read_reg] Read register INT_STATUS2
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(348) @ 6490.000 ns: uvm_test_top [TEST_BASE/CLEAR_FILTER_STATUS] Clearing filter status for filter 7
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(225) @ 6490.000 ns: uvm_test_top [DEBUG] Reg value before write = 00000000
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(234) @ 6490.000 ns: uvm_test_top [write_reg_fields] Write register INT_STATUS1 fields '{"IN7_INT"} with values '{1}
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(123) @ 6490.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence] Executing write sequence with parameters access_type=WRITE address=16 data=64
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_monitor.svh(45) @ 6496.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.monitor [ifx_dig_data_bus_uvc_monitor] Data access detected
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(127) @ 6505.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@write_seq [ifx_dig_data_bus_uvc_write_sequence]  Item finished 
-UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_testbase.svh(249) @ 6505.000 ns: uvm_test_top [read_reg] Read register INT_STATUS1
+UVM_INFO /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_sequence_lib.svh(87) @ 3365.000 ns: uvm_test_top.dig_env.data_bus_uvc_agt.sequencer@@read_seq [ifx_dig_data_bus_uvc_read_sequence]  Item finished 
 
 --- UVM Report catcher Summary ---
 
@@ -1079,27 +790,26 @@ Number of caught UVM_WARNING reports :    0
 
 Quit count :     0 of  1000
 ** Report counts by severity
-UVM_INFO :  502
-UVM_WARNING :    1
+UVM_INFO :  294
+UVM_WARNING :    0
 UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[DEBUG]    48
+[DEBUG]    16
 [RNTST]     1
-[TEST]    50
-[TEST_BASE/CLEAR_FILTER_STATUS]    32
+[TEST]    34
 [TEST_BASE/CONFIGURE_FILTER]    16
-[TEST_BASE/READ_FILTER_STATUS]    32
-[drive_reset]     1
+[TEST_BASE/READ_FILTER_STATUS]    16
 [ifx_dig_data_bus_uvc_monitor]    49
-[ifx_dig_data_bus_uvc_write_sequence]    96
+[ifx_dig_data_bus_uvc_read_sequence]    64
+[ifx_dig_data_bus_uvc_write_sequence]    32
 [ifx_dig_env]     2
-[ifx_dig_pin_filter_uvc_generic_sequence]    16
 [ifx_dig_pin_filter_uvc_monitor]    16
-[read_reg]    96
-[write_reg_fields]    48
-Simulation complete via $finish(1) at time 6605 NS + 81
+[read_reg]    32
+[write_reg_fields]    16
+Simulation complete via $finish(1) at time 3465 NS + 81
 /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
-xcelium> run
-xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> 
+xcelium> 
+xcelium> 
 xcelium> 

@@ -21,7 +21,7 @@
 +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/seq_lib
 -loadpli
 /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so:uvm_pli_boot
-+UVM_TESTNAME=ifx_dig_test_filter_rising
++UVM_TESTNAME=ifx_dig_test_filter_toggle
 -ACCESS
 rwc
 -COVERAGE
