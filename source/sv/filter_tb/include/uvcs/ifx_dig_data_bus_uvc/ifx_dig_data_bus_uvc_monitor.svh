@@ -23,7 +23,7 @@ class ifx_dig_data_bus_uvc_monitor extends uvm_monitor;
 
   ifx_dig_data_bus_uvc_seq_item mon_item;
 
-  uvm_analysis_port #(ifx_dig_data_bus_uvc_seq_item) mon_port;
+  uvm_analysis_port #(ifx_dig_data_bus_uvc_seq_item) mon_port; // # e tipul de pachet pe care il poate transmite
 
   function new(string name,uvm_component parent);
     super.new(name,parent);
@@ -40,7 +40,7 @@ class ifx_dig_data_bus_uvc_monitor extends uvm_monitor;
 
     forever begin
       @(posedge vif.clk_i) begin
-        `WAIT_NS(1)
+        `WAIT_NS(1) //astept 1s ca sa prind semnalele cum trebuie, elimin delayurile 
         if (vif.acc_en_o && vif.rstn_i) begin
           `uvm_info(get_type_name(), "Data access detected", UVM_MEDIUM)
           mon_item.access_type = vif.wr_en_o ? WRITE : READ; // identify the access type

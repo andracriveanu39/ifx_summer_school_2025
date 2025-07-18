@@ -43,10 +43,10 @@ class ifx_dig_scoreboard extends uvm_scoreboard;
     //-------------------------------------------------------------------------
     //=========================================================================
 
-    `uvm_analysis_imp_decl(_data_bus_uvc)                                                                // macro will make the function write"_data_bus_uvc" be called every time an item is written to the analysis port
-    uvm_analysis_imp_data_bus_uvc #(ifx_dig_data_bus_uvc_seq_item, ifx_dig_scoreboard) data_bus_uvc_imp; // data bus UVC monitor connects here
+    `uvm_analysis_imp_decl(_data_bus_uvc)                                                                // macro apeleaza fortat functia write"_data_bus_uvc" ca sa determine cosnumul imediat al itemului
+    uvm_analysis_imp_data_bus_uvc #(ifx_dig_data_bus_uvc_seq_item, ifx_dig_scoreboard) data_bus_uvc_imp; // data bus UVC monitor connects here, e de consum imediat al itemului
 
-    uvm_tlm_analysis_fifo #(ifx_dig_pin_filter_uvc_seq_item) pin_filter_uvcs_imp_fifo; // all exports from UVC filters are connected here
+    uvm_tlm_analysis_fifo #(ifx_dig_pin_filter_uvc_seq_item) pin_filter_uvcs_imp_fifo; // all exports from UVC filters are connected here, toate itemele care vin de la filtre se duc aici
 
     //=========================================================================
     // Signals, variables, methods PER FEATURE.
@@ -92,7 +92,7 @@ class ifx_dig_scoreboard extends uvm_scoreboard;
                 ifx_dig_reg reg_obj = regblock.get_reg_by_address(packet.address);
                 if(reg_obj != null)
                     reg_obj.write_reg_value(packet.data);
-                ->reg_write_e;
+                ->reg_write_e; //se emite un eveniment, un puls, un trigger care apare in momentul ala de timp
             end else if(packet.access_type == READ) begin
                 // check if the returned data by the DUT is matching the expected data
                 check_read_data(packet.address, packet.data);
@@ -137,7 +137,10 @@ function void ifx_dig_scoreboard::build_phase(uvm_phase phase);
     regblock.build();
 
     //TODO: Get dig_vif pointer from uvm_config_db
-
+    if (!uvm_config_db#(virtual ifx_dig_interface)::get(this, "", "dig_if", dig_vif))
+        `uvm_fatal("TEST_BASE/NOVIF", "No virtual interface specified for SCOREBOARD") //fault handling
+    uvm_config_db #(virtual ifx_dig_interface)::get(uvm_top, "*", "dig_if", dig_vif); //i am dat set in dig_top unde era creata acea interfaata, ii dam get in scoreboard pentru a o transmite mai departe
+    //virtual inseamna ca e doar un pointer catre interfata respectiva, nu interfata
 endfunction : build_phase
 
 function void ifx_dig_scoreboard::connect_phase(uvm_phase phase);
@@ -153,6 +156,12 @@ endfunction : end_of_elaboration_phase
 task ifx_dig_scoreboard::run_phase(uvm_phase phase);
     // TODO: Write code allowing for parallel execution of
     // collect_coverage(), golden_model(), do_checkers()
+
+    fork
+        collect_coverage();
+        golden_model();
+        do_checkers(); //vreau ca toate cele 3 taskuri sa se execute in paralel si sa se termine in acelasi timp
+    join
 
 endtask : run_phase
 

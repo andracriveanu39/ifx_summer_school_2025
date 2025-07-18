@@ -95,18 +95,18 @@ class ifx_dig_pin_filter_uvc_monitor extends uvm_monitor;
                                             filt_rise_cnt++;
                                             @(posedge vif.clk_i);
                                         end
-                                        mon_item.filter_validity = FILT_VALID;
+                                        mon_item.filter_validity = FILT_VALID; //avem un input mai lung decat window
                                     end else
                                     // if we don't have a filter send the item immediately
                                     begin
-                                        mon_item.filter_validity = FILT_NONE;
+                                        mon_item.filter_validity = FILT_NONE; //nu trebuie sa se realizeze filtrare
                                     end
 
                                     filt_out_b = 1;
                                 end
                                 begin // filtering reset
                                     @(negedge vif.pin_monitor_s);
-                                    mon_item.filter_validity = FILT_INVALID;
+                                    mon_item.filter_validity = FILT_INVALID; //avem un input mai mic decat window
                                 end
                             join_any
                             disable fork;

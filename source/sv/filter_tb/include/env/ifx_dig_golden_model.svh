@@ -35,8 +35,6 @@ task golden_model();
 
         monitor_reset();
 
-        collect_coverage();
-
         update_uvc_config();
 
         model_interrupt();
@@ -57,9 +55,9 @@ endtask
 
 task monitor_reset();
     forever begin
-        regblock.reset();
+        regblock.reset(); //vreau ca registrele mele sa porneasca din valoarea de reset
         ->regblock_reset_e;
-        @(negedge dig_vif.rstn_i);
+        @(negedge dig_vif.rstn_i); //se reseteaza register block la reset=0
     end
 endtask
 
@@ -68,7 +66,7 @@ endtask
  */
 task update_uvc_config();
     forever begin
-        foreach(p_env.pin_filter_uvc_agt[ifilter]) begin
+        foreach(p_env.pin_filter_uvc_agt[ifilter]) begin //ia fiecare filtru in parte si il actualizeaza
 
             case(regblock.get_field_value($sformatf("FILTER_CTRL%0d", ifilter+1), "WD_RST"))
                 0: p_env.pin_filter_uvc_agt[ifilter].cfg.filter_reset_sel = FILT_ASYNC_RESET;
@@ -163,14 +161,20 @@ task model_interrupt();
     // monitor the interrupt request from all filters and reset the request after 1 clock cycle
     for(int ifilter = 0; ifilter < `FILT_NB; ifilter++) begin
         automatic int ifilter_aux = ifilter; // in order to be able to start multiple threads based on the index, the variable index must be automatic (local for each thread)
-        fork
+        fork //toate filtrele pornesc in paralel si eu vreau sa monitorizez intreruperea pentru fiecare
             forever @(posedge filt_int_req_b[ifilter_aux]) begin
                 //TODO: Implement logic modeling the interput status and the intrrupt
+                regblock.predict_field_value($sformatf("INT_STATUS%0d", (ifilter_aux+1)%8 ? (ifilter_aux+1)/8 +1 : (ifilter_aux+1)/8), $sformatf("IN%0d_INT", ifilter_aux+1), 1); //diferenta dintre un write si un predict e ca predict seteaza o valoare in urma unor procese interne, adica de ex prin terminarea filtrului se actualizeaza status
+                @(posedge dig_vif.clk_i); //folosesc pointer la clockul din interfata
+                filt_int_req_b[ifilter_aux] = 0; //generez un puls de intrerupere de un ciclu de ceas
                 `uvm_info("INTERRUPT_REQUEST", $sformatf("Interrupt request for filter ended. %0d", ifilter_aux), UVM_MEDIUM)
             end
-        join_none
+        join_none //threadurile sunt pornite si nu se asteapta executia lor, nu imi blocheaza bucata de cod de dupa
     end
 
+    forever @(filt_int_req_b) begin
+        int_pulse_out_gm = |filt_int_req_b; //SAU pe vector
+    end
     //HINT: combine all the request into a single interrupt output
 endtask
 
@@ -182,12 +186,17 @@ task model_data_out();
     ifx_dig_pin_filter_uvc_seq_item filt_packet = ifx_dig_pin_filter_uvc_seq_item::type_id::create("filt_packet");
     forever begin
         pin_filter_uvcs_imp_fifo.get(filt_packet); // the call is blocking, will wait for the item to be available
+        //toate itemele vin de la fifo, indexul reprezinta numarul filtrului de la care vine pachetul
 
         `uvm_info("WRITE_PIN_FILTER_UVC", $sformatf("Received packet from PIN_FILTER_UVC monitor. Packet %p\n", filt_packet), UVM_LOW)
 
         case(filt_packet.filter_validity)
             FILT_VALID: begin
                 // TODO: Implement logic for modeling the filter output update and interrupt update (if enabled)
+                data_out_gm[filt_packet.id] = filt_packet.filt_edge == FILT_RISE_EDGE ? 1 : 0;
+                if(regblock.get_field_value($sformatf("FILTER_CTRL%0d", filt_packet.id+1), "INT_EN")) begin //AM NEVOIE DE INT_EN
+                    filt_int_req_b[filt_packet.id] = 1; //folosesc vectorul de intreruperi
+                end
             end
 
             FILT_NONE: begin

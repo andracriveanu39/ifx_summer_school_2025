@@ -41,7 +41,7 @@ class ifx_dig_sfr_test extends ifx_dig_testbase;
 
         `TEST_INFO("Main phase started")
                 
-        `TEST_INFO("Star using write_reg")
+        `TEST_INFO("Start using write_reg")
         write_reg_fields(
             .reg_name("FILTER_CTRL3"),
             .fields_names({"INT_EN", "FILTER_TYPE"}),

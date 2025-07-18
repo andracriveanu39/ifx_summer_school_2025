@@ -63,7 +63,7 @@ class ifx_dig_env extends uvm_env;
 
 
   function void build_phase(uvm_phase phase);
-    super.build_phase(phase);
+    super.build_phase(phase); //in build se creeaza obiectele in general
     `uvm_info (get_type_name(), $sformatf(">>>>>>>>>>>>ENV BUILD_PHASE starts<<<<<<<<<"), UVM_LOW)
 
     //=======================COMPONENT CREATES======================
@@ -97,6 +97,9 @@ class ifx_dig_env extends uvm_env;
     // connect UVC tlm ports
 
     // TODO: Connect data_bus_uvc analysis port to scoreboard import
+
+    data_bus_uvc_agt.monitor.mon_port.connect(scoreboard.data_bus_uvc_imp); //se transmite un item printr o conexiunea
+                                                                            //nu se precizeazaimport sau export pentru ca e definit ca import
 
     foreach(pin_filter_uvc_agt[idx]) begin
       pin_filter_uvc_agt[idx].monitor.mon_port.connect(scoreboard.pin_filter_uvcs_imp_fifo.analysis_export);
