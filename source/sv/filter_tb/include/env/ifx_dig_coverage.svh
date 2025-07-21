@@ -13,7 +13,8 @@
  *
  *******************************************************************************/
 
-task collect_coverage();
+task collect_coverage(); //fac un fork ca sa se execute in paralel
+fork 
   forever begin
     @(reg_write_e);
     foreach(p_env.pin_filter_uvc_agt[ifilter]) begin
@@ -71,14 +72,24 @@ task collect_coverage();
         end
      endcase
      `uvm_info("ifx_dig_coverage", $sformatf("Sample for cov_filter_reset %s, cov_filter_type %s, cov_int_en %0b, cov_window_size %0d.", cov_filter_reset.name(), cov_filter_type.name(), cov_int_en, cov_window_size), UVM_DEBUG)
-     cg_filter_ctrl.sample();
+     cg_filter_ctrl.sample(); //se da sample dupa actualizarea valorilor 
      `uvm_info("ifx_dig_coverage", $sformatf("Coverage for cg_filter_ctrl %0.9f%%.", cg_filter_ctrl.get_coverage()), UVM_DEBUG)
     end
   end
+    forever begin
+        @(reg_read_e);
+        //intai vreau sa ma asigur ca citesc de la un registru de status, nu unul de control 
+        if(latest_address>=`FILT_NB) begin 
+            int filt_stat_idx = (latest_address - `FILT_NB)*8; //vreau sa incep de la registrul de status respectiv si sa iterez prin filtre
+            for(int idx=0; idx <8; idx++ )
+                cg_int_status_read.sample(filt_stat_idx+idx, latest_data[idx]);
+        end
+    end
+join
 endtask
 
 covergroup cg_filter_ctrl with function sample();
-  option.per_instance = 1;
+  option.per_instance = 1; //daca instantiez covergroup de mai multe ori
   option.name = "cg_filter_ctrl";
 
   cp_filter_reset: coverpoint cov_filter_reset{
@@ -92,7 +103,7 @@ covergroup cg_filter_ctrl with function sample();
     bins rise_fall_filter = {2'b11};
   }
   cp_window_size: coverpoint cov_window_size{
-     bins low_range = {[4:32]};
+     bins low_range = {[4:32]}; //splituim in 4 intervale 
      bins middle_range_0 = {[48:256]};
      bins middle_range_1 = {[512:896]};
      bins high_range = {[1024:2048]};
@@ -102,10 +113,31 @@ covergroup cg_filter_ctrl with function sample();
     bins int_en = {1'b1};
   }
 
-  cx_filter_type_x_window_size: cross cp_filter_type, cp_window_size;
+  cx_filter_type_x_window_size: cross cp_filter_type, cp_window_size; //va avea 16 valori, 4x4
   cx_filter_type_x_int_en: cross cp_filter_type, cp_int_en;
-  cx_filter_reset_x_filter_type: cross cp_filter_reset, cp_filter_type;
+  cx_filter_reset_x_filter_type: cross cp_filter_reset, cp_filter_type; // sunt sparte in functie de importanta lor, de cum sunt corelate pentru a limita numarul de binuri 
 endgroup
 
 //TODO: Add covergroup to prove interrupt status was set regardless of
 // selected filter type
+covergroup cg_int_status_read with function sample(int id, bit int_stat_bit); //ii dam parametri local, mai sus foloseam variabile globale
+    option.per_instance=1;
+    option.name="cg_int_status_read";
+
+    ID_cp: coverpoint id{
+        /* bins ID0 = {0};
+        bins ID1 = {1};
+        ... definirea individuala a idurilor
+        */
+        bins ID[]= {[0:`FILT_NB-1]}; //pentru fiecare index sa defineste un id
+    }
+
+    INT_STAT_cp: coverpoint int_stat_bit {
+        bins INT_ACTIVED = {1};
+        bins INT_NOT_ACTIVATED = {0}; //cand bitul de interrupt status e 0
+    }
+
+    INT_STAT_vs_ID_crs : cross ID_cp, INT_STAT_cp{
+        ignore_bins not_relevant = binsof(INT_STAT_cp.INT_NOT_ACTIVATED); //nu ma intereseaza valorile pt care nu am intrerupere, se injumatateste de la 32 la 16 numarul de bins
+    }
+endgroup

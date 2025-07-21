@@ -27,7 +27,7 @@
 /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so
 +UVM_TESTNAME=ifx_dig_test_filter_rising
 -SVSEED
-1234
+120404
 -gui
 -gui
 -INPUT
@@ -42,7 +42,7 @@ run_gui.tcl
 +EMGRLOG
 xrun.log
 -XLSTIME
-1752828045
+1753090021
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.24.09.d

@@ -56,6 +56,9 @@ class ifx_dig_scoreboard extends uvm_scoreboard;
     event reg_write_e;
     event reg_read_e;
     event regblock_reset_e; // sets when regblock is reset and GM or other components must update
+
+    bit [`AWIDTH-1:0] latest_address; //last read or write address
+    bit [`DWIDTH-1:0] latest_data; //am nevoie pt checker
     //=========================================================================
     // COVERAGE.
     //-------------------------------------------------------------------------
@@ -92,10 +95,12 @@ class ifx_dig_scoreboard extends uvm_scoreboard;
                 ifx_dig_reg reg_obj = regblock.get_reg_by_address(packet.address);
                 if(reg_obj != null)
                     reg_obj.write_reg_value(packet.data);
+                    latest_address=packet.address;
+                    latest_data=packet.data; //le obtin inainte de eveniment ca in checker, la eveniment sa am datele
                 ->reg_write_e; //se emite un eveniment, un puls, un trigger care apare in momentul ala de timp
             end else if(packet.access_type == READ) begin
                 // check if the returned data by the DUT is matching the expected data
-                check_read_data(packet.address, packet.data);
+                check_read_data(packet.address, packet.data); //se face checkerul dupa read
                 ->reg_read_e;
             end
         end
@@ -118,7 +123,7 @@ function ifx_dig_scoreboard::new(string name = "ifx_dig_scoreboard", uvm_compone
 //-------------------------------------------------------------------------
 //=========================================================================
     this.cg_filter_ctrl        = new();
-
+    this.cg_int_status_read    = new(); //odata creat, covergroup trebuie instantiat
 //=========================================================================
 //  TLM IMPORT INITIALIZATION.
 //-------------------------------------------------------------------------
