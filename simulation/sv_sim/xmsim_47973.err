@@ -1,0 +1,393 @@
+csi-xmsim - CSI: Command line:
+xmsim
+    -f /home/student8/ifx_summer_school_2025/simulation/sv_sim/xcelium.d/run.lnx8664.24.09.d/sonic2_47973/xmsim.args
+        -INPUT @source /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+        +incdir+/home/student8/ifx_summer_school_2025
+        +incdir+/home/student8/ifx_summer_school_2025/source
+        +incdir+/home/student8/ifx_summer_school_2025/source/v
+        +incdir+/home/student8/ifx_summer_school_2025/source/v/rtl
+        +incdir+/home/student8/ifx_summer_school_2025/source/v/tb
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_data_bus_uvc/ifx_dig_data_bus_uvc_pkg_and_if
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_data_bus_uvc_pkg_and_if
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/registers
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests
+        +incdir+/home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/seq_lib
+        -uvmhome /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d
+        -sv_lib /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so
+        +UVM_TESTNAME=ifx_dig_sfr_test
+        -SVSEED 1234
+        -gui
+        -gui
+        -INPUT run_gui.tcl
+        -COVOVERWRITE
+        -ERRORMAX 2
+        -MESSAGES
+        -SV_LIB /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmdpi.so
+        +EMGRLOG xrun.log
+        -XLSTIME 1753085964
+        -XLKEEP
+        -XLMODE ./xcelium.d/run.lnx8664.24.09.d
+        -RUNMODE
+        -CDSLIB ./xcelium.d/run.lnx8664.24.09.d/cds.lib
+        -HDLVAR ./xcelium.d/run.lnx8664.24.09.d/hdl.var
+        -XLNAME xrun
+        -XLVERSION TOOL:	xrun(64)	24.09-s005
+        -XLNAME ./xcelium.d/run.lnx8664.24.09.d/sonic2_47973
+    -CHECK_VERSION TOOL:	xrun(64)	24.09-s005
+    -LOG_FD 4
+    -LOG_FD_NAME xrun.log
+    -cmdnopsim
+    -runlock /home/student8/ifx_summer_school_2025/simulation/sv_sim/xcelium.d/run.lnx8664.24.09.d/.xmlib.lock
+    -runscratch /home/student8/ifx_summer_school_2025/simulation/sv_sim/xcelium.d/run.lnx8664.24.09.d/sonic2_47973
+Observed simulation time : 28545 NS + 81
+
+csi-xmsim - CSI: *F,INTERR: INTERNAL EXCEPTION
+-----------------------------------------------------------------
+The tool has encountered an unexpected condition and must exit.
+Contact Cadence Design Systems customer support about this
+problem and provide enough information to help us reproduce it,
+including the logfile that contains this error message.
+  TOOL:	xmsim(64)	24.09-s005 (CL: 727498 )
+  HOSTNAME: sonic2
+  OPERATING SYSTEM: Linux 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Aug 2 03:44:10 EDT 2024 x86_64
+  MESSAGE: sv_seghandler - trapno -1 addr(0x30)
+-----------------------------------------------------------------
+
+csi-xmsim - CSI: Cadence Support Investigation, recording details
+External Code in function: <unavailable> offset -65514
+External Code in function: <unavailable> offset -65533
+External Code in function: <unavailable> offset -65516
+Intermediate File: string (IF_STRING) in verilog_package worklib.uvm_pkg:sv (VST)
+	Decompile: worklib
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh, line 68, position 13
+	Scope: uvm_pkg::uvm_root
+	Decompile: uvm_pkg::uvm_root
+	Source  : class uvm_root extends uvm_component;
+	Position:              ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh, line 340, position 22
+	Scope: uvm_pkg::uvm_root::run_test
+	Decompile: run_test
+	Source  : task uvm_root::run_test(string test_name="");
+	Position:                       ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_component.svh, line 2300, position 56
+	Scope: uvm_pkg::uvm_component::report_phase
+	Decompile: uvm_pkg::uvm_phase phase
+	Source  : function void uvm_component::report_phase(uvm_phase phase);
+	Position:                                                         ^
+External Code in function: <unavailable> offset -65536
+Verilog Syntax Tree: package declaration (VST_D_PACKAGE) in verilog_package worklib.ifx_dig_pkg:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/ifx_dig_pkg.sv, line 16, position 18
+	Scope: ifx_dig_pkg
+	Decompile: ifx_dig_pkg
+	Source  : package ifx_dig_pkg;
+	Position:                   ^
+Verilog Syntax Tree: module declaration (VST_D_MODULE) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 19, position 17
+	Scope: ifx_dig_top
+	Decompile: ifx_dig_top
+	Source  : module ifx_dig_top;
+	Position:                  ^
+Verilog Syntax Tree: overlay table (VST_OVERLAY_TABLE) in verilog_package worklib.ifx_dig_test_pkg:sv (SIG) <0x6971318e>
+	Decompile: ifx_dig_test_pkg
+Verilog Syntax Tree: overlay table (VST_OVERLAY_TABLE) in module worklib.ifx_dig_top:sv (SIG) <0x41bc5463>
+	Decompile: ifx_dig_top
+Verilog Syntax Tree: wire declaration (VST_D_WIRE) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 43, position 16
+	Scope: ifx_dig_top
+	Decompile: logic rstn_i_w
+	Source  :     wire rstn_i_w;
+	Position:                 ^
+Intermediate File: data block (IF_BLK) in snapshot worklib.ifx_dig_top:sv (SSS)
+Simulator Snap Shot: tog reg cov (SSS_COV_TOG_REG) in snapshot worklib.ifx_dig_top:sv (SSS)
+Verilog Syntax Tree: logic type (VST_T_LOGIC) in module worklib.ifx_dig_top:sv (VST)
+	Decompile: logic
+Simulator Snap Shot: gd (SSS_GD) in snapshot worklib.ifx_dig_top:sv (SSS)
+Verilog Syntax Tree: logical equality expression (VST_E_LOGICAL_EQUALITY) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 82, position 41
+	Decompile: (data_in == data_out_reg_s)
+	Source  : 			((filter_type_i == 2'b11) & (data_in == data_out_reg_s)); // rise & fall filter type and input is the 
+	Position: 			                                      ^
+Verilog Syntax Tree: named connection expression (VST_E_NAMED_CONNECTION) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/comps/uvm_push_driver.svh, line 77, position 58
+	Decompile: named connection
+	Source  :                                req_export.size()), UVM_NONE);
+	Position:                                                           ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 82, position 56
+	Scope: filter
+	Decompile: data_out_reg_s
+	Source  : 			((filter_type_i == 2'b11) & (data_in == data_out_reg_s)); // rise & fall filter type and input is the 
+	Position: 			                                                     ^
+Verilog Syntax Tree: forever statement (VST_S_FOREVER) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 164, position 14
+	Scope: ifx_dig_top.generate_clock
+	Decompile: unable to decompile type 643
+	Source  :         forever begin
+	Position:               ^
+Verilog Syntax Tree: case statement (VST_S_CASE) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 158, position 11
+	Scope: ifx_dig_top.generate_clock
+	Decompile: time_unit
+	Source  :         case(time_unit)
+	Position:            ^
+Verilog Syntax Tree: class type (VST_T_CLASS) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_phase.svh, line 24, position 31
+	Scope: uvm_pkg
+	Decompile: uvm_pkg::uvm_sequencer_base
+	Source  : typedef class uvm_sequencer_base;
+	Position:                                ^
+Verilog Syntax Tree: task enable statement (VST_S_TASK_ENABLE) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 178, position 67
+	Scope: ifx_dig_top
+	Decompile: unable to decompile type 651
+	Source  :         uvm_config_db #(virtual ifx_dig_data_bus_uvc_interface)::set(uvm_top, "data_bus_uvc_agt", "vif", data_uvc_if);
+	Position:                                                                    ^
+Verilog Syntax Tree: string expression (VST_E_STRING) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 161, position 15
+	Decompile: "ms"
+	Source  :             "ms":clk_half_per_ps = period*1000*1e9/2;
+	Position:                ^
+Intermediate File: root (IF_ROOT) in module worklib.ifx_dig_top:sv (VST)
+Verilog Syntax Tree: blocking assignment statement (VST_S_BLOCKING_ASSIGNMENT) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 161, position 33
+	Scope: ifx_dig_top.generate_clock
+	Decompile: (((period * 1000) * 1000000000.000000000000000) / 2)
+	Source  :             "ms":clk_half_per_ps = period*1000*1e9/2;
+	Position:                                  ^
+Verilog Syntax Tree: item case (VST_CASE_ITEM) in module worklib.ifx_dig_top:sv (VST)
+	Decompile: unable to decompile type 675
+Verilog Syntax Tree: root (VST_ROOT) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 19, position 5
+	Decompile: ifx_dig_top
+	Source  : module ifx_dig_top;
+	Position:      ^
+Verilog Syntax Tree: blocking assignment statement (VST_S_BLOCKING_ASSIGNMENT) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 165, position 38
+	Scope: ifx_dig_top.generate_clock
+	Decompile: !clk
+	Source  :             #(clk_half_per_ps*1ps) clk=!clk;
+	Position:                                       ^
+Intermediate File: root (IF_ROOT) in interface worklib.ifx_dig_pin_filter_uvc_interface:sv (VST)
+Verilog Syntax Tree: if statement (VST_S_IF) in interface worklib.ifx_dig_pin_filter_uvc_interface:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_pkg_and_if/ifx_dig_pin_filter_uvc_interface.sv, line 67, position 9
+	Scope: ifx_dig_pin_filter_uvc_interface
+	Decompile: !rstn_i
+	Source  :         if (!rstn_i) begin
+	Position:          ^
+Verilog Syntax Tree: sequential block statement (VST_S_SEQ_BLOCK) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 164, position 20
+	Scope: ifx_dig_top.generate_clock
+	Source  :         forever begin
+	Position:                     ^
+Verilog Syntax Tree: sequential block statement (VST_S_SEQ_BLOCK) in interface worklib.ifx_dig_pin_filter_uvc_interface:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_pkg_and_if/ifx_dig_pin_filter_uvc_interface.sv, line 69, position 21
+	Scope: ifx_dig_pin_filter_uvc_interface
+	Source  :         end else begin
+	Position:                      ^
+Verilog Syntax Tree: sequential block statement (VST_S_SEQ_BLOCK) in module worklib.synchronizer_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/synchronizer_block.v, line 63, position 14
+	Scope: synchronizer_block
+	Source  : 	end else begin 
+	Position: 	             ^
+Intermediate File: root (IF_ROOT) in module worklib.synchronizer_block:v (VST)
+Verilog Syntax Tree: register declaration (VST_D_REG) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/seq/uvm_sequence_item.svh, line 43, position 48
+	Scope: uvm_pkg::uvm_sequence_item
+	Decompile: uvm_pkg::uvm_sequence_base m_parent_sequence
+	Source  :   protected  uvm_sequence_base  m_parent_sequence;
+	Position:                                                 ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in module worklib.synchronizer_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/synchronizer_block.v, line 34, position 29
+	Scope: synchronizer_block
+	Decompile: data_in
+	Source  : 		data_in_sync1_s   <= data_in;
+	Position: 		                           ^
+Verilog Syntax Tree: plus expression (VST_E_PLUS) in module worklib.register_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/register_bank.v, line 78, position 43
+	Decompile: (N + j)
+	Source  : 				if(acc_en_i && !wr_en_i && (addr_i == N+j)) //clear command
+	Position: 				                                       ^
+Intermediate File: root (IF_ROOT) in verilog_package worklib.uvm_pkg:sv (VST)
+Intermediate File: string (IF_STRING) in module worklib.ifx_dig_top:sv (VST)
+	Decompile: DUT
+Verilog Syntax Tree: register declaration (VST_D_REG) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh, line 98, position 25
+	Scope: uvm_pkg::uvm_root
+	Decompile: uvm_pkg::uvm_component queue top_levels
+	Source  :   uvm_component top_levels[$];
+	Position:                          ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in verilog_package worklib.ifx_dig_test_pkg:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/tests/ifx_dig_sfr_test.svh, line 16, position 21
+	Scope: ifx_dig_test_pkg::ifx_dig_sfr_test
+	Decompile: ifx_dig_test_pkg::ifx_dig_sfr_test
+	Source  : class ifx_dig_sfr_test extends ifx_dig_testbase;
+	Position:                      ^
+Verilog Syntax Tree: if statement (VST_S_IF) in module worklib.register_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/register_bank.v, line 78, position 5
+	Scope: register_block.genblk2
+	Decompile: ((acc_en_i && !wr_en_i) && (addr_i == (N + j)))
+	Source  : 				if(acc_en_i && !wr_en_i && (addr_i == N+j)) //clear command
+	Position: 				 ^
+Verilog Syntax Tree: if statement (VST_S_IF) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 140, position 3
+	Scope: filter
+	Decompile: (((counter_filter_s == 11'd1) & (data_in ^ data_out_reg_s)) & int_en_i)
+	Source  : 		if (counter_filter_s == 11'd1 & (data_in ^ data_out_reg_s) & int_en_i)
+	Position: 		 ^
+Verilog Syntax Tree: nonblocking assignment statement (VST_S_NONBLOCKING_ASSIGNMENT) in interface worklib.ifx_dig_pin_filter_uvc_interface:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_pkg_and_if/ifx_dig_pin_filter_uvc_interface.sv, line 70, position 25
+	Scope: ifx_dig_pin_filter_uvc_interface
+	Decompile: filt_reset_type?pin_s_sync1:pin_s_async1
+	Source  :             pin_s_sync2 <= filt_reset_type ? pin_s_sync1 : pin_s_async1; // select the first stage based on the reset type
+	Position:                          ^
+Verilog Syntax Tree: nonblocking assignment statement (VST_S_NONBLOCKING_ASSIGNMENT) in module worklib.synchronizer_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/synchronizer_block.v, line 65, position 22
+	Scope: synchronizer_block
+	Decompile: second_stage_input_s
+	Source  : 		dara_in_async2_s   <= second_stage_input_s;
+	Position: 		                    ^
+Verilog Syntax Tree: logical negation expression (VST_E_LOGICAL_NEGATION) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 165, position 39
+	Decompile: !clk
+	Source  :             #(clk_half_per_ps*1ps) clk=!clk;
+	Position:                                        ^
+Verilog Syntax Tree: nonblocking assignment statement (VST_S_NONBLOCKING_ASSIGNMENT) in module worklib.register_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/register_bank.v, line 82, position 20
+	Scope: register_block.genblk2
+	Decompile: (INT_STATUS[j] | in_int_i[(((j + 1) * 8) - 1):(j * 8)])
+	Source  : 					INT_STATUS[j]	<= INT_STATUS[j] |  in_int_i [ ((j+1) *8) -1 : j*8 ]; // set when interrupt pulse
+	Position: 					             	 ^
+Verilog Syntax Tree: nonblocking assignment statement (VST_S_NONBLOCKING_ASSIGNMENT) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 145, position 15
+	Scope: filter
+	Decompile: 1'b0
+	Source  : 			in_int_o   <=  1'b0; // 1 clock cycle pulse 	
+	Position: 			            ^
+Verilog Syntax Tree: conditional expression (VST_E_CONDITIONAL) in interface worklib.ifx_dig_pin_filter_uvc_interface:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_pkg_and_if/ifx_dig_pin_filter_uvc_interface.sv, line 70, position 43
+	Decompile: filt_reset_type?pin_s_sync1:pin_s_async1
+	Source  :             pin_s_sync2 <= filt_reset_type ? pin_s_sync1 : pin_s_async1; // select the first stage based on the reset type
+	Position:                                            ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in interface worklib.ifx_dig_pin_filter_uvc_interface:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/uvcs/ifx_dig_pin_filter_uvc/ifx_dig_pin_filter_uvc_pkg_and_if/ifx_dig_pin_filter_uvc_interface.sv, line 70, position 70
+	Scope: ifx_dig_pin_filter_uvc_interface
+	Decompile: pin_s_async1
+	Source  :             pin_s_sync2 <= filt_reset_type ? pin_s_sync1 : pin_s_async1; // select the first stage based on the reset type
+	Position:                                                                       ^
+Verilog Syntax Tree: package declaration (VST_D_PACKAGE) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/uvm_pkg.sv, line 27, position 14
+	Scope: uvm_pkg
+	Decompile: uvm_pkg
+	Source  : package uvm_pkg;
+	Position:               ^
+Verilog Syntax Tree: real number expression (VST_E_REAL_NUMBER) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 161, position 49
+	Decompile: 1000000000.000000000000000
+	Source  :             "ms":clk_half_per_ps = period*1000*1e9/2;
+	Position:                                                  ^
+Simulator Snap Shot: top level instance (SSS_TLI) in snapshot worklib.ifx_dig_top:sv (SSS)
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in verilog_package worklib.ifx_dig_pkg:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/include/env/ifx_dig_scoreboard.svh, line 46, position 40
+	Scope: ifx_dig_pkg::ifx_dig_scoreboard::uvm_analysis_imp_data_bus_uvc
+	Decompile: uvm_analysis_imp_data_bus_uvc#(T,IMP)
+	Source  :     `uvm_analysis_imp_decl(_data_bus_uvc)                                                                // macro apeleaza fortat functia write"_data_bus_uvc" ca sa determine cosnumul imediat al itemului
+	Position:                                         ^
+Verilog Syntax Tree: number expression (VST_E_NUMBER) in module worklib.ifx_dig_top:sv (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/filter_tb/tb/ifx_dig_top.sv, line 161, position 45
+	Decompile: 1000
+	Source  :             "ms":clk_half_per_ps = period*1000*1e9/2;
+	Position:                                              ^
+Verilog Syntax Tree: if statement (VST_S_IF) in module worklib.register_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/register_bank.v, line 99, position 8
+	Scope: register_block
+	Decompile: (addr_i < (N + NUM_STATUS_REGS))
+	Source  : 		else if (addr_i < N+ NUM_STATUS_REGS)
+	Position: 		      ^
+Verilog Syntax Tree: if statement (VST_S_IF) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 122, position 8
+	Scope: filter
+	Decompile: ((filter_type_i == 2'b01) & !data_in)
+	Source  : 		else if ((filter_type_i == 2'b01) & !data_in)  // rise type filter and input l0w
+	Position: 		      ^
+Intermediate File: root (IF_ROOT) in module worklib.filter:v (VST)
+Verilog Syntax Tree: nonblocking assignment statement (VST_S_NONBLOCKING_ASSIGNMENT) in module worklib.register_block:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/register_bank.v, line 105, position 12
+	Scope: register_block
+	Decompile: 8'b00000000
+	Source  : 			rdata_o <=   8'b0000_0000;
+	Position: 			         ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 120, position 38
+	Scope: filter
+	Decompile: data_out_reg_s
+	Source  : 			data_out_reg_s   <=  !data_out_reg_s;
+	Position: 			                                   ^
+Simulator Snap Shot: root (SSS_ROOT) in snapshot worklib.ifx_dig_top:sv (SSS)
+External Code in function: <unavailable> offset -29704
+Verilog Syntax Tree: if statement (VST_S_IF) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 126, position 8
+	Scope: filter
+	Decompile: ((filter_type_i == 2'b10) & data_in)
+	Source  : 		else if ((filter_type_i == 2'b10) & data_in)  // fall type filter and input high
+	Position: 		      ^
+Verilog Syntax Tree: root (VST_ROOT) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 1, position 5
+	Decompile: filter
+	Source  : module filter (
+	Position:      ^
+Verilog Syntax Tree: nonblocking assignment statement (VST_S_NONBLOCKING_ASSIGNMENT) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 128, position 21
+	Scope: filter
+	Decompile: 1'b1
+	Source  : 			data_out_reg_s   <=  1'b1;		
+	Position: 			                  ^
+External Code in function: <unavailable> offset -65480
+Verilog Syntax Tree: dpifunction declaration (VST_D_DPIFUNCTION) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/dpi/uvm_regex.svh, line 23, position 39
+	Scope: uvm_pkg::uvm_re_match
+	Decompile: unable to decompile type 801
+	Source  : import "DPI-C" function int uvm_re_match(string re, string str);
+	Position:                                        ^
+Intermediate File: string (IF_STRING) in verilog_package worklib.uvm_pkg:sv (VST)
+	Decompile: __I_rts_uvm_re_match
+Verilog Syntax Tree: function call expression (VST_E_FUNCTION_CALL) in verilog_package worklib.uvm_pkg:sv (VST)
+	File: /opt/cadence/installs/XCELIUM2409/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_config_db.svh, line 218, position 22
+	Scope: uvm_pkg::uvm_config_db::set.unmblk2.unmblk1
+	Decompile: uvm_re_match()
+	Source  :         if(uvm_re_match(uvm_glob_to_re(inst_name),w.inst_name) == 0)
+	Position:                       ^
+Verilog Syntax Tree: if statement (VST_S_IF) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 103, position 8
+	Scope: filter
+	Decompile: (counter_filter_s > 0)
+	Source  : 		else if (counter_filter_s > 0)
+	Position: 		      ^
+Verilog Syntax Tree: nonblocking assignment statement (VST_S_NONBLOCKING_ASSIGNMENT) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 105, position 23
+	Scope: filter
+	Decompile: (counter_filter_s - 1)
+	Source  : 			counter_filter_s   <= counter_filter_s - 1; // count 
+	Position: 			                    ^
+External Code in function: <unavailable> offset -65534
+Verilog Syntax Tree: minus expression (VST_E_MINUS) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 105, position 42
+	Decompile: (counter_filter_s - 1)
+	Source  : 			counter_filter_s   <= counter_filter_s - 1; // count 
+	Position: 			                                       ^
+Verilog Syntax Tree: number expression (VST_E_NUMBER) in module worklib.filter:v (VST)
+	File: /home/student8/ifx_summer_school_2025/source/sv/rtl/filter.v, line 105, position 44
+	Decompile: 1
+	Source  : 			counter_filter_s   <= counter_filter_s - 1; // count 
+	Position: 			                                         ^
+User Code in function: <unavailable> offset 47666898
+csi-xmsim - CSI: investigation complete took 0.146 secs, send this file to Cadence Support

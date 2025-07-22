@@ -43,7 +43,7 @@ task do_checkers();
 
     wait(dig_vif.rstn_i == 0); // wait for reset, otherwise DUT signals are not initialized
     `WAIT_NS(1)                // wait for the reset to propagate
-
+    
     fork
 
         forever begin
@@ -61,6 +61,7 @@ task do_checkers();
 
         for(int ifilt=0; ifilt < `FILT_NB; ifilt++) begin
             automatic int ifilt_aux = ifilt; // each thread below must
+            //avem fork pentru ca actionam asupra tuturor bitilor
             fork
                 forever begin
                     /*
