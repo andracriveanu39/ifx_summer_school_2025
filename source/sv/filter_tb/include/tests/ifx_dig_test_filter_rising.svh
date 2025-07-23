@@ -74,22 +74,15 @@ class ifx_dig_test_filter_rising extends ifx_dig_testbase;
 
             `TEST_INFO($sformatf("Drive an invalid pulse length on filter: %0d", filter_list[ifilt]))
             // drive a pulse on the filter - using the sequence created already in the testbase
-            pin_filter_generic_seq.drive_type = FILT_DRV_INVALID;
-            pin_filter_generic_seq.filt_edge  = FILT_RISE_EDGE;
-            pin_filter_generic_seq.start(dig_env.v_seqr.p_pin_filter_uvc_seqr[filter_list[ifilt] - 1]); // send the sequence of the specific filter sequencer
-            `WAIT_NS($urandom_range(50,100))                                                            // let status update
+            pin_filter_invalid_pulse_train_seq.randomize();
+            pin_filter_invalid_pulse_train_seq.pulse_gap_clk = 1;
+            pin_filter_invalid_pulse_train_seq.start(dig_env.v_seqr.p_pin_filter_uvc_seqr[filter_list[ifilt] - 1]);                                 // let status update
 
-            read_filter_status(0);// read all status registers
-            clear_filter_status(filter_list[ifilt]);
             `WAIT_NS(100) // space between pulses
 
 
-            `TEST_INFO($sformatf("Drive a valid pulse length on filter: %0d", filter_list[ifilt]))
-            // TODO: drive a valid pulse on the filter using the ifx_dig_pin_filter_uvc_pulse_sequence
-            pin_filter_valid_pulse_seq.start(dig_env.v_seqr.p_pin_filter_uvc_seqr[filter_list[ifilt] - 1]);
-
             read_filter_status(0);// read all status registers
-            clear_filter_status(filter_list[ifilt]); //nu e necesar, noi aveam deja clear dupa citire
+            clear_filter_status(filter_list[ifilt]);
             `WAIT_NS(100) // space between pulses
 
         end

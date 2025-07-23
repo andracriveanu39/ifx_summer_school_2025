@@ -129,7 +129,7 @@ covergroup cg_int_status_read with function sample(int id, bit int_stat_bit); //
         bins ID1 = {1};
         ... definirea individuala a idurilor
         */
-        bins ID[]= {[0:`FILT_NB-1]}; //pentru fiecare index sa defineste un id
+        bins ID[]= {[0:`FILT_NB-1]}; //pentru fiecare index se defineste un id
     }
 
     INT_STAT_cp: coverpoint int_stat_bit {
@@ -141,3 +141,22 @@ covergroup cg_int_status_read with function sample(int id, bit int_stat_bit); //
         ignore_bins not_relevant = binsof(INT_STAT_cp.INT_NOT_ACTIVATED); //nu ma intereseaza valorile pt care nu am intrerupere, se injumatateste de la 32 la 16 numarul de bins
     }
 endgroup
+
+covergroup cg_filtering_type with function sample(int id, int filter_type);
+    option.per_instance=1;
+    option.name="cg_filtering_type";
+
+    ID_cp: coverpoint id{
+        bins ID[]= {[0:`FILT_NB-1]}; //pentru fiecare index se defineste un id
+    }
+    cp_filter_type: coverpoint filter_type{
+    bins filter_disabled = {0};
+    bins rise_filter = {1};
+    bins fall_filter = {2};
+    bins rise_fall_filter = {3};
+    }
+
+    cx_filtering_type_x_id: cross ID_cp, cp_filter_type; 
+    //facem sample dupa ce primim un item de la agentii de filtru, ne intereseaza sa fie valid
+
+endgroup 

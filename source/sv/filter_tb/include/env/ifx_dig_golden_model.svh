@@ -197,6 +197,8 @@ task model_data_out();
                 if(regblock.get_field_value($sformatf("FILTER_CTRL%0d", filt_packet.id+1), "INT_EN")) begin //AM NEVOIE DE INT_EN
                     filt_int_req_b[filt_packet.id] = 1; //folosesc vectorul de intreruperi
                 end
+                cg_filtering_type.sample(.id(filt_packet.id), .filter_type(regblock.get_field_value($sformatf("FILTER_CTRL%0d", filt_packet.id+1), "FILTER_TYPE"))); //tipul filtrului nu se afla in pachet, il preiau din registre (acolo le gasesc)
+                //fac sample, de data asta, in golden model si nu in collect_coverage, pentru ca pot obtine itemele mai usor 
             end
 
             FILT_NONE: begin
