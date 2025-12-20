@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TOP_TB_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TOP_TB" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="420.001 ns"></ZoomEndTime>
+      <Cursor1Time time="420.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="157"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="29" />
+   <wvobject fp_name="/TOP_TB/clk_i_tb" type="logic">
+      <obj_property name="ElementShortName">clk_i_tb</obj_property>
+      <obj_property name="ObjectShortName">clk_i_tb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/rstn_i_tb" type="logic">
+      <obj_property name="ElementShortName">rstn_i_tb</obj_property>
+      <obj_property name="ObjectShortName">rstn_i_tb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/data_in_tb" type="array">
+      <obj_property name="ElementShortName">data_in_tb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_tb[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk1[0].u0 /data_sinc_out" type="logic">
+      <obj_property name="ElementShortName">data_sinc_out</obj_property>
+      <obj_property name="ObjectShortName">data_sinc_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk1[1].u0 /data_sinc_out" type="logic">
+      <obj_property name="ElementShortName">data_sinc_out</obj_property>
+      <obj_property name="ObjectShortName">data_sinc_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/data_out_tb" type="array">
+      <obj_property name="ElementShortName">data_out_tb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out_tb[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/int_pulse_out_tb" type="logic">
+      <obj_property name="ElementShortName">int_pulse_out_tb</obj_property>
+      <obj_property name="ObjectShortName">int_pulse_out_tb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[0].f0 /int_pulse" type="logic">
+      <obj_property name="ElementShortName">int_pulse</obj_property>
+      <obj_property name="ObjectShortName">int_pulse</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[1].f0 /int_pulse" type="logic">
+      <obj_property name="ElementShortName">int_pulse</obj_property>
+      <obj_property name="ObjectShortName">int_pulse</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[0].f0 /counter" type="array">
+      <obj_property name="ElementShortName">counter[10:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[1].f0 /counter" type="array">
+      <obj_property name="ElementShortName">counter[10:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[0].f0 /filter_type" type="array">
+      <obj_property name="ElementShortName">filter_type[1:0]</obj_property>
+      <obj_property name="ObjectShortName">filter_type[1:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[0].f0 /window_size" type="array">
+      <obj_property name="ElementShortName">window_size[3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_size[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[0].f0 /int_en" type="logic">
+      <obj_property name="ElementShortName">int_en</obj_property>
+      <obj_property name="ObjectShortName">int_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[1].f0 /filter_type" type="array">
+      <obj_property name="ElementShortName">filter_type[1:0]</obj_property>
+      <obj_property name="ObjectShortName">filter_type[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[1].f0 /window_size" type="array">
+      <obj_property name="ElementShortName">window_size[3:0]</obj_property>
+      <obj_property name="ObjectShortName">window_size[3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[1].f0 /int_en" type="logic">
+      <obj_property name="ElementShortName">int_en</obj_property>
+      <obj_property name="ObjectShortName">int_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/rb0/reg_c" type="array">
+      <obj_property name="ElementShortName">reg_c[0:7][7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_c[0:7][7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/rb0/filter_type" type="array">
+      <obj_property name="ElementShortName">filter_type[15:0]</obj_property>
+      <obj_property name="ObjectShortName">filter_type[15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/rb0/int_en" type="array">
+      <obj_property name="ElementShortName">int_en[7:0]</obj_property>
+      <obj_property name="ObjectShortName">int_en[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/rb0/status" type="array">
+      <obj_property name="ElementShortName">status[7:0]</obj_property>
+      <obj_property name="ObjectShortName">status[7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[0].f0 /rise" type="logic">
+      <obj_property name="ElementShortName">rise</obj_property>
+      <obj_property name="ObjectShortName">rise</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[1].f0 /fall" type="logic">
+      <obj_property name="ElementShortName">fall</obj_property>
+      <obj_property name="ObjectShortName">fall</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/rb0/reg_s" type="array">
+      <obj_property name="ElementShortName">reg_s[0:0][7:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_s[0:0][7:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/TOP_TB/DUT/rb0/reg_s[0]" type="array">
+         <obj_property name="ElementShortName">[0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][7:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/wdata_i_tb" type="array">
+      <obj_property name="ElementShortName">wdata_i_tb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata_i_tb[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/addr_i_tb" type="array">
+      <obj_property name="ElementShortName">addr_i_tb[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_i_tb[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/rdata_o_tb" type="array">
+      <obj_property name="ElementShortName">rdata_o_tb[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_o_tb[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[0].f0 /counter" type="array">
+      <obj_property name="ElementShortName">counter[10:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TOP_TB/DUT/\genblk2[1].f0 /counter" type="array">
+      <obj_property name="ElementShortName">counter[10:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[10:0]</obj_property>
+   </wvobject>
+</wave_config>
